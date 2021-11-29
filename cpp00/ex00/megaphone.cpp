@@ -15,10 +15,11 @@ int	main(int argc, char *argv[])
 		while (*ptr)
 		{
 			if (islower(*ptr))
-				*ptr -= 32;
+				std::cout << (char)(*ptr - 32);
+			else
+				std::cout << *ptr;
 			ptr++;
 		}
-		std::cout << argv[i];
 		i++;
 	}
 	return (0);
