@@ -56,7 +56,7 @@ void	PhoneBook::search()
 	std::cout << "|  Darkest Secret: ";
 	std::cout << pb[idx].getDarkestSecret() << std::endl;
 }
-
+ 
 void	PhoneBook::format_cout(std::string str)
 {
 
