@@ -5,6 +5,8 @@
 #include <string>
 #include <iomanip>
 
+#define NEW 42
+
 class Contact
 {
 private:
@@ -13,28 +15,31 @@ private:
 	std::string	nickname;
 	std::string	phone_number;
 	std::string	darkest_secret;
-	int	order=0;
 
 public:
-	Contact(int order)
-	{
-		this.order = order;
-	}
-	void	new_contact()
-	{
-		
-	}
+	Contact();
+	Contact(int i);
+
+	std::string	getFirstName();
+	std::string	getLastName();
+	std::string	getNickName();
+	std::string	getPhoneNumber();
+	std::string	getDarkestSecret();
 	
 };
 
 class PhoneBook
 {
-	private:
-	Contact phoneBook[8];
+private:
+	Contact pb[8];
+	int		count;
 
-	public:
+public:
 	PhoneBook();
-	void	add(Contact con);
-	void	search(void);
+	void	add();
+	void	search();
+	Contact	*getPb();
+	int		getCount();
+	void	format_cout(std::string str);
 };
 #endif
