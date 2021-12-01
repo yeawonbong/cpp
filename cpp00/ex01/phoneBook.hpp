@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 17:09:26 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/01 17:09:27 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
@@ -38,8 +50,6 @@ public:
 	PhoneBook();
 	void	add();
 	void	search();
-	Contact	*getPb();
-	int		getCount();
 	void	format_cout(std::string str);
 };
 #endif

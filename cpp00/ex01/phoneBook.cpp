@@ -1,17 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   phoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 17:09:22 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/01 17:09:22 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(){count = 0;}
-
-Contact *PhoneBook::getPb(){return pb;}
-int		PhoneBook::getCount(){return count;}
-
 
 void	PhoneBook::add()
 {
 	Contact contact(NEW);
 
+	if (contact.getPhoneNumber() == "Err")
+		return;
 	if (count < 8)
+	{
 		pb[count] = contact;
+		count++;
+	}
 	else if (count == 8)
 	{
 		for (int i=0; i < 7; i++)
@@ -20,13 +33,17 @@ void	PhoneBook::add()
 		}
 		pb[7] = contact;
 	}
-	count++;
 }
 
 void	PhoneBook::search()
 {
 	int idx;
 
+	if (count == 0)
+	{
+		std::cout << "The PhoneBook is empty!" << std::endl;
+		return;
+	}
 	std::cout << "|";
 	format_cout("INDEX");
 	format_cout("FIRST NAME");
@@ -42,9 +59,16 @@ void	PhoneBook::search()
 		format_cout(pb[i].getNickName());
 		std::cout << std::endl;
 	}
-	std::cout << "What contact do you want to see? (put INDEX number..) ";
+	std::cout << "> What contact do you want to see? (put INDEX number..) " << std::endl;
 	std::cin >> idx;
-	std::cout << "|CONTACT INFO" << std::endl;
+	if (idx >= count || std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(100, '\n');
+		std::cout << "> INDEX " << idx << " does not exist!" << std::endl;
+		return;
+	}
+	std::cout << "|> CONTACT INFO" << std::endl;
 	std::cout << "|  First Name: ";
 	std::cout << pb[idx].getFirstName() << std::endl;
 	std::cout << "|  Last Name: ";
@@ -55,6 +79,7 @@ void	PhoneBook::search()
 	std::cout << pb[idx].getPhoneNumber() << std::endl;
 	std::cout << "|  Darkest Secret: ";
 	std::cout << pb[idx].getDarkestSecret() << std::endl;
+	return;
 }
  
 void	PhoneBook::format_cout(std::string str)

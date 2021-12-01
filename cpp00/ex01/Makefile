@@ -1,8 +1,20 @@
-NAME = PhoneBook.cpp\
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ybong <ybong@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/01 17:09:28 by ybong             #+#    #+#              #
+#    Updated: 2021/12/01 17:09:30 by ybong            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = phoneBook
+
+SRC = PhoneBook.cpp\
 Contact.cpp\
 Main.cpp
-
-SRC = phoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
@@ -24,5 +36,3 @@ clean :
 
 re : fclean all
 
-
-	
