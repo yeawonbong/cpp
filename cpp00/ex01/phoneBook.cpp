@@ -84,7 +84,6 @@ void	PhoneBook::search()
  
 void	PhoneBook::format_cout(std::string str)
 {
-
 	if (str.length() > 10)
 	{
 		std::cout << str.substr(0,9);
