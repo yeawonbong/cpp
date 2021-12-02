@@ -65,7 +65,7 @@ void	PhoneBook::search()
 	{
 		std::cin.clear();
 		std::cin.ignore(100, '\n');
-		std::cout << "> INDEX " << idx << " does not exist!" << std::endl;
+		std::cout << "> Invalid INDEX number!" << std::endl;
 		return;
 	}
 	std::cout << "|> CONTACT INFO" << std::endl;
