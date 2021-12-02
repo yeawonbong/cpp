@@ -12,9 +12,9 @@
 
 NAME = phoneBook
 
-SRC = PhoneBook.cpp\
-Contact.cpp\
-Main.cpp
+SRC = phoneBook.cpp\
+contact.cpp\
+main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++

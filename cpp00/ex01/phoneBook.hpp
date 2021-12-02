@@ -37,7 +37,6 @@ public:
 	std::string	getNickName();
 	std::string	getPhoneNumber();
 	std::string	getDarkestSecret();
-	
 };
 
 class PhoneBook
