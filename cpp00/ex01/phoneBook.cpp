@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:09:22 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/01 17:09:22 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/02 20:53:20 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	PhoneBook::search()
 		format_cout(pb[i].getNickName());
 		std::cout << std::endl;
 	}
-	std::cout << "> What contact do you want to see? (put INDEX number..) " << std::endl;
+	std::cout << "> What contact do you want to see? (put INDEX number..): ";
 	std::cin >> idx;
 	if (idx >= count || std::cin.fail())
 	{
