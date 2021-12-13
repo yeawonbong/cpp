@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/13 17:15:34 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/13 17:29:23 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ $(NAME) : $(OBJ)
 
 $(OBJ) : $(SRC)
 	$(CC) $(CFLAGES) -c $(SRC)
+	@mv *.o src
 
 fclean : clean
 	rm -f $(NAME)
