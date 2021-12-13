@@ -15,4 +15,8 @@ int	main(int argc, char* argv[])
 		std::cout << "Invalid Filename!" << std::endl;
 		return (0);
 	}
+	while (!fin.eof())
+	{
+		
+	}
 }
