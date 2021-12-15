@@ -11,7 +11,7 @@ public:
 	Weapon();
 	Weapon(std::string type);
 	const std::string	&getType() const;
-	void				setType(std::string);
+	void				setType(std::string string);
 };
 
 #endif
