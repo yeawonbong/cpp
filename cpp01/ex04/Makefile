@@ -6,16 +6,13 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/13 18:40:04 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/16 18:28:05 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
 
-SRC = src/main.cpp\
-src/Weapon.cpp\
-src/HumanA.cpp\
-src/HumanB.cpp
+SRC = src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
