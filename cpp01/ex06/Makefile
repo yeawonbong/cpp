@@ -5,21 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/01 17:09:28 by ybong             #+#    #+#              #
-#    Updated: 2021/12/17 19:26:16 by ybong            ###   ########.fr        #
+#    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
+#    Updated: 2021/12/17 17:38:01 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phoneBook
+NAME = karenFilter
 
-SRC = ./src/phoneBook.cpp\
-./src/contact.cpp\
-./src/main.cpp
+SRC = src/Karen.cpp\
+src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
-CFLAGES = -g -Wall -Wextra -Werror
+CFLAGES = -Wall -Wextra -Werror
 
 all : $(NAME)
 
@@ -28,7 +27,7 @@ $(NAME) : $(OBJ)
 
 $(OBJ) : $(SRC)
 	$(CC) $(CFLAGES) -c $(SRC)
-	@mv *.o ./src
+	@mv *.o src
 
 fclean : clean
 	rm -f $(NAME)

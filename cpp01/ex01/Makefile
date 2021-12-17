@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ybong <ybong@student.42.fr>                +#+  +:+       +#+         #
+#    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/10 18:03:26 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/17 19:17:40 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombieHorde
 
-SRC = ZombieHorde.cpp\
-Zombie.cpp\
-main.cpp
+SRC = ./src/ZombieHorde.cpp\
+./src/Zombie.cpp\
+./src/main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
@@ -27,6 +27,7 @@ $(NAME) : $(OBJ)
 
 $(OBJ) : $(SRC)
 	$(CC) $(CFLAGES) -c $(SRC)
+	@mv *.o src
 
 fclean : clean
 	rm -f $(NAME)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 17:09:13 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/01 17:09:15 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/17 19:25:18 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phoneBook.hpp"
+#include "../include/phoneBook.hpp"
 
 Contact::Contact(){}
 

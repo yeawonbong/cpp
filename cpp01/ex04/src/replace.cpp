@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 19:23:39 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/17 19:23:40 by ybong            ###   ########.fr       */
+/*   Created: 2021/12/17 19:23:42 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/17 19:23:43 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	replace(char* argv[])
 
 	fileIn.open(argv[1], std::ios_base::in);
 	fileOut.open((((std::string)argv[1]).append(".replace")));
-	if (!fileIn.is_open() || !fileOut.is_open())
+	if (!fileIn.is_open())
 	{
 		std::cout << "Invalid Filename!" << std::endl;
 		return (1);
@@ -46,15 +46,7 @@ int	replace(char* argv[])
 		if (!fileIn.eof())
 			fileOut << std::endl;
 	}
+	fileIn.close();
+	fileOut.close();
 	return (0);
-}
-
-int	main(int argc, char* argv[])
-{
-	if (argc != 4)
-	{
-		std::cout << "Invalid Input!" << std::endl;
-		return (0);
-	}
-	replace(argv);
 }

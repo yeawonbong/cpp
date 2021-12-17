@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 19:24:06 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/17 19:24:07 by ybong            ###   ########.fr       */
+/*   Created: 2021/12/17 19:23:18 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/17 19:23:19 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Weapon.hpp"
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-Weapon::Weapon(){}
-Weapon::Weapon(std::string type) : type(type)
-{
-}
+#include <iostream>
+#include <string>
 
-const	std::string&	Weapon::getType() const
+class Karen
 {
-	return type;
-}
+private:
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+public:
+	void	filter(std::string level);
+};
 
-void	Weapon::setType(std::string type)
-{
-	this->type = type;
-}
+#endif

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 17:00:56 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/10 17:46:30 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/17 19:18:59 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../include/Zombie.hpp"
 
 int	main(void)
 {
@@ -20,7 +20,7 @@ int	main(void)
 
 	std::cout << "How many Zombies do you want to create? :  ";
 	std::cin >> N;
-	if (std::cin.fail())
+	if (std::cin.fail() || N < 1)
 	{
 		std::cout << "Invalid Input!" << std::endl;
 		return 0;

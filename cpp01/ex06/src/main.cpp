@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 19:24:06 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/17 19:24:07 by ybong            ###   ########.fr       */
+/*   Created: 2021/12/17 19:23:11 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/17 19:23:12 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Weapon.hpp"
+#include "../include/Karen.hpp"
 
-Weapon::Weapon(){}
-Weapon::Weapon(std::string type) : type(type)
+int	main(int argc, char* argv[])
 {
-}
+	Karen karen;
 
-const	std::string&	Weapon::getType() const
-{
-	return type;
-}
-
-void	Weapon::setType(std::string type)
-{
-	this->type = type;
+	if (argc != 2)
+	{
+		std::cout << "Err: Invalid Input!" << std::endl;
+		return (0);
+	}
+	karen.filter(argv[1]);
 }
