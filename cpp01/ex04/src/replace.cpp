@@ -4,9 +4,9 @@ int	replace(char* argv[])
 {
 	std::ifstream	fileIn; // input file stream
 	std::ofstream	fileOut; // output file stream
-	char	line[BUFFER_SIZE];
-	char*	ptr;
-	int		pos;
+	char			line[BUFFER_SIZE];
+	char*			ptr;
+	unsigned int long	pos;
 
 	fileIn.open(argv[1], std::ios_base::in);
 	fileOut.open((((std::string)argv[1]).append(".replace")));

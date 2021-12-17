@@ -6,13 +6,13 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/16 18:28:05 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/17 15:21:57 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
 
-SRC = src/main.cpp
+SRC = src/replace.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -30,6 +30,7 @@ $(OBJ) : $(SRC)
 
 fclean : clean
 	rm -f $(NAME)
+	rm -f *.replace
 
 clean :
 	rm -f $(OBJ)
