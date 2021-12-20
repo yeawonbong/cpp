@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 19:23:42 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/17 19:23:43 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/20 17:30:49 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	replace(char* argv[])
 {
-	std::ifstream	fileIn; // input file stream
-	std::ofstream	fileOut; // output file stream
+	std::ifstream	fileIn;
+	std::ofstream	fileOut;
 	char			line[BUFFER_SIZE];
 	char*			ptr;
 	unsigned int long	pos;
@@ -25,6 +25,8 @@ int	replace(char* argv[])
 	if (!fileIn.is_open())
 	{
 		std::cout << "Invalid Filename!" << std::endl;
+		fileIn.close();
+		fileOut.close();
 		return (1);
 	}
 	while (!fileIn.eof())
@@ -33,7 +35,7 @@ int	replace(char* argv[])
 		ptr = line;
 		while (*ptr)
 		{
-			pos = ((std::string)ptr).find(argv[2],0); // 문자 찾음
+			pos = ((std::string)ptr).find(argv[2],0);
 			if (pos == std::string::npos)
 			{
 				fileOut << ptr;

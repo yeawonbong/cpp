@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 19:23:39 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/17 19:23:40 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/20 17:29:56 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	replace(char* argv[])
 		ptr = line;
 		while (*ptr)
 		{
-			pos = ((std::string)ptr).find(argv[2],0); // 문자 찾음
+			pos = ((std::string)ptr).find(argv[2],0);
 			if (pos == std::string::npos)
 			{
 				fileOut << ptr;
