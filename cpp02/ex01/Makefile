@@ -5,18 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/01 17:09:35 by ybong             #+#    #+#              #
+#    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
 #    Updated: 2021/12/20 15:12:56 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = karenFilter
 
-SRC = megaphone.cpp
+SRC = src/Karen.cpp\
+src/main.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 CXX = clang++
-CXXFLAGES = -g -Wall -Wextra -Werror
+CXXFLAGES = -Wall -Wextra -Werror
 
 all : $(NAME)
 
@@ -25,6 +27,7 @@ $(NAME) : $(OBJ)
 
 $(OBJ) : $(SRC)
 	$(CXX) $(CXXFLAGES) -c $(SRC)
+	@mv *.o src
 
 fclean : clean
 	rm -f $(NAME)
@@ -34,5 +37,3 @@ clean :
 
 re : fclean all
 
-
-	

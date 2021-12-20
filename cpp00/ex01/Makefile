@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 17:09:28 by ybong             #+#    #+#              #
-#    Updated: 2021/12/17 19:26:16 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/20 15:12:56 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,16 @@ SRC = ./src/phoneBook.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = clang++
-CFLAGES = -g -Wall -Wextra -Werror
+CXX = clang++
+CXXFLAGES = -g -Wall -Wextra -Werror
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGES) -o $@ $(OBJ)
+	$(CXX) $(CXXFLAGES) -o $@ $(OBJ)
 
 $(OBJ) : $(SRC)
-	$(CC) $(CFLAGES) -c $(SRC)
+	$(CXX) $(CXXFLAGES) -c $(SRC)
 	@mv *.o ./src
 
 fclean : clean
