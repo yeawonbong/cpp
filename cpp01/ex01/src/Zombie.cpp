@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 16:24:41 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/17 19:16:51 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/20 15:42:40 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie(){};
 
-Zombie::Zombie(std::string name): name(name) //생성자 정의
+Zombie::Zombie(std::string name): name(name)
 {
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 16:24:24 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/10 17:13:52 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/20 15:39:22 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Zombie
 private:
     std::string name;
 public:
-    Zombie(std::string name); // constructor
-    ~Zombie(void); // 소멸자 destructor - add debugging message
-
+    Zombie(std::string name);
+    ~Zombie(void);
+    
     void announce(void) const;
 };
 
