@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ybong <ybong@student.42.fr>                +#+  +:+       +#+         #
+#    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/10 18:03:46 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/20 15:12:56 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,16 @@ NAME = brain
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
-CC = clang++
-CFLAGES = -Wall -Wextra -Werror
+CXX = clang++
+CXXFLAGES = -Wall -Wextra -Werror
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGES) -o $@ $(OBJ)
+	$(CXX) $(CXXFLAGES) -o $@ $(OBJ)
 
 $(OBJ) : $(SRC)
-	$(CC) $(CFLAGES) -c $(SRC)
+	$(CXX) $(CXXFLAGES) -c $(SRC)
 
 fclean : clean
 	rm -f $(NAME)
