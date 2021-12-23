@@ -6,13 +6,13 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/20 15:12:56 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/23 18:15:44 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karenFilter
+NAME = a.out
 
-SRC = src/Karen.cpp\
+SRC = src/Fixed.cpp\
 src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)

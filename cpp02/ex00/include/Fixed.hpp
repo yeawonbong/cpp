@@ -8,15 +8,17 @@ class	Fixed
 private:
 	int	fixedPointVal;
 	static const int	fractionalBits = 8;
-	static bool			verbose;
+	
 public:
 	Fixed(void);
-	Fixed(const Fixed &src);
+	Fixed(const Fixed &src); // copy constructor
 	~Fixed(void);
 
-	Fixed &operator=(const Fixed &other);
-	static void	setVerbose(bool value);
-	static bool	getVerbose(void);
+	// operator overload
+	Fixed 	&operator=(const Fixed &other); 
+	
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
 };
 
 #endif
