@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 18:15:40 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/24 16:10:31 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/24 16:30:06 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,35 @@ Fixed	&Fixed::operator=(const Fixed &other) {
 	return *this;
 }
 
+// Compare functions
+static int	&Fixed::min(int fpv1, int fpv2) {
+	if (fpv1 > fpv2)
+		return fpv2;
+	return fpv1;
+}
+const int	&Fixed::min(const int &fpv1, const int &fpv2) {
+	if (fpv1 > fpv2)
+		return fpv2;
+	return fpv1;
+}
+
+static int	&Fixed::max(int fpv1, int fpv2) {
+	if (fpv1 < fpv2)
+		return fpv2;
+	return fpv1;
+}
+const int	&Fixed::max(const int &fpv1, const int &fpv2) {
+	if (fpv1 < fpv2)
+		return fpv2;
+	return fpv1;
+}
+int			Fixed::max(Fixed f1, Fixed f2) {
+	if (f1.fixedPointVal < f2.fixedPointVal)
+		return f2;
+	return f1;
+}
+
+
 // Member functions
 float	Fixed::toFloat(void) const {
 	return (float)fixedPointVal / (1 << fractionalBits);
@@ -51,7 +80,7 @@ int		Fixed::toInt(void) const {
 	return fixedPointVal >> fractionalBits;
 }
 
-int	Fixed::getRawBits(void) const {
+int		Fixed::getRawBits(void) const {
 	return fixedPointVal;
 }
 

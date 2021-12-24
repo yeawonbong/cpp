@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 18:15:47 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/23 18:15:48 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/24 16:31:36 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ public:
 	Fixed(const Fixed &src); // copy constructor
 	~Fixed(void);
 
-	// operator overload
-	Fixed 			&operator=(const Fixed &other); 
+	// Operator overload
+	Fixed 	&operator=(const Fixed &other); 
 	float	toFloat(void) const;
 	int		toInt(void) const;
 
+
+	// Getter Setter
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
@@ -41,3 +43,11 @@ public:
 std::ostream	&operator<<(std::ostream &os, const Fixed &other);
 
 #endif
+
+	// Compare func - Class overload 
+	static int	&min(int fpv1, int fpv2);
+	static const int	&min(const int &fpv1, const int &fpv2);
+	
+	static int	&max(int fpv1, int fpv2);
+	static const int	&max(const int &fpv1, const int &fpv2);
+	static int			max(Fixed f1, Fixed f2);
