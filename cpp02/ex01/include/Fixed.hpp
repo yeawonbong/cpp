@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 18:15:47 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/23 18:15:48 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/25 17:27:49 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	~Fixed(void);
 
 	// operator overload
-	Fixed 			&operator=(const Fixed &other); 
+	Fixed 	&operator=(const Fixed &other); 
 	float	toFloat(void) const;
 	int		toInt(void) const;
 

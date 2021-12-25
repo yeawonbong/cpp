@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 18:15:47 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/24 16:31:36 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/25 15:12:49 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ std::ostream	&operator<<(std::ostream &os, const Fixed &other);
 
 #endif
 
-	// Compare func - Class overload 
+	// Compare func - Class overload 해야함.
 	static int	&min(int fpv1, int fpv2);
 	static const int	&min(const int &fpv1, const int &fpv2);
 	
