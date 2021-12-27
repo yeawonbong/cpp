@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 18:15:47 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/25 15:12:49 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/27 15:41:21 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <cmath>
+#include <iomanip>
+
 
 class	Fixed 
 {
@@ -29,13 +31,36 @@ public:
 	Fixed(const Fixed &src); // copy constructor
 	~Fixed(void);
 
-	// Operator overload
-	Fixed 	&operator=(const Fixed &other); 
-	float	toFloat(void) const;
+	/* Operator overload */
+	Fixed 	&operator=(const Fixed &instance);
+	// - comparison operators
+	bool	operator>(const Fixed &instance);
+	bool	operator<(const Fixed &instance);
+	bool	operator>=(const Fixed &instance);
+	bool	operator<=(const Fixed &instance);
+	bool	operator==(const Fixed &instance);
+	bool	operator!=(const Fixed &instance);
+	// - arithmetic operators
+	Fixed	operator+(const Fixed &instance);
+	Fixed	operator-(const Fixed &instance);
+	Fixed	operator*(const Fixed &instance);
+	Fixed	operator/(const Fixed &instance);
+	// - increment, decrement operators
+	Fixed	operator++(void);
+	Fixed	operator++(int);
+	Fixed	operator--(void);
+	Fixed	operator--(int);
+
+	/* Member functions */
 	int		toInt(void) const;
+	float	toFloat(void) const;
 
+	static Fixed		&min(Fixed &fpv1, Fixed &fpv2);
+	static const Fixed	&min(const Fixed &fpv1, const Fixed &fpv2);
+	static Fixed		&max(Fixed &fpv1, Fixed &fpv2);
+	static const Fixed	&max(const Fixed &fpv1, const Fixed &fpv2);
 
-	// Getter Setter
+	/* Getter Setter */
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
@@ -44,10 +69,3 @@ std::ostream	&operator<<(std::ostream &os, const Fixed &other);
 
 #endif
 
-	// Compare func - Class overload 해야함.
-	static int	&min(int fpv1, int fpv2);
-	static const int	&min(const int &fpv1, const int &fpv2);
-	
-	static int	&max(int fpv1, int fpv2);
-	static const int	&max(const int &fpv1, const int &fpv2);
-	static int			max(Fixed f1, Fixed f2);

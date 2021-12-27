@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 18:15:40 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/24 16:30:06 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/27 15:31:41 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,62 +14,91 @@
 
 // Constructor, Destructor
 Fixed::Fixed(void) : fixedPointVal(0) {
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value) {
-	std::cout << "Int constructor called" << std::endl;
 	this->fixedPointVal = value << this->fractionalBits;
 }
 Fixed::Fixed(const float value) {
-	std::cout << "Float constructor called" << std::endl;
 	fixedPointVal = roundf(value * (1 << fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &src) {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
 }
 
-// Operator overload
+/* Operator overload */
 Fixed	&Fixed::operator=(const Fixed &other) {
-	std::cout << "Assignation operator called" << std::endl;
 	setRawBits(other.getRawBits());
 	return *this;
 }
 
-// Compare functions
-static int	&Fixed::min(int fpv1, int fpv2) {
-	if (fpv1 > fpv2)
-		return fpv2;
-	return fpv1;
+// - comparison operators
+bool	Fixed::operator>(const Fixed &instance) {
+	return (this->getRawBits() > instance.getRawBits());
 }
-const int	&Fixed::min(const int &fpv1, const int &fpv2) {
-	if (fpv1 > fpv2)
-		return fpv2;
-	return fpv1;
+bool	Fixed::operator<(const Fixed &instance) {
+	return (this->getRawBits() < instance.getRawBits());
 }
-
-static int	&Fixed::max(int fpv1, int fpv2) {
-	if (fpv1 < fpv2)
-		return fpv2;
-	return fpv1;
+bool	Fixed::operator>=(const Fixed &instance) {
+	return (this->getRawBits() >= instance.getRawBits());
 }
-const int	&Fixed::max(const int &fpv1, const int &fpv2) {
-	if (fpv1 < fpv2)
-		return fpv2;
-	return fpv1;
+bool	Fixed::operator<=(const Fixed &instance) {
+	return (this->getRawBits() <= instance.getRawBits());	
 }
-int			Fixed::max(Fixed f1, Fixed f2) {
-	if (f1.fixedPointVal < f2.fixedPointVal)
-		return f2;
-	return f1;
+bool	Fixed::operator==(const Fixed &instance) {
+	return (this->getRawBits() == instance.getRawBits());
+}
+bool	Fixed::operator!=(const Fixed &instance) {
+	return (this->getRawBits() != instance.getRawBits());
 }
 
+// - arithmetic operators
+Fixed 	Fixed::operator+(const Fixed &instance) {
+	Fixed	res;
+
+	res.setRawBits(this->getRawBits() + instance.getRawBits());
+	return (res);
+}
+Fixed 	Fixed::operator-(const Fixed &instance) {
+	Fixed	res;
+
+	res.setRawBits(this->getRawBits() - instance.getRawBits());
+	return (res);
+}
+Fixed 	Fixed::operator*(const Fixed &instance) {
+	Fixed	res(this->toFloat() * instance.toFloat());
+	return (res);
+}
+Fixed 	Fixed::operator/(const Fixed &instance) {
+	Fixed	res(this->toFloat() / instance.toFloat());
+	return (res);
+}
+
+// - increment, decrement operators
+Fixed 	Fixed::operator++(void) {
+	this->fixedPointVal++;
+	return (*this);
+}
+Fixed 	Fixed::operator++(int) {
+	Fixed	old(*this);
+
+	this->fixedPointVal++;
+	return (old);
+}
+Fixed 	Fixed::operator--(void) {
+	this->fixedPointVal--;
+	return (*this);	
+}
+Fixed 	Fixed::operator--(int) {
+	Fixed	old(*this);
+
+	this->fixedPointVal--;
+	return (old);
+}
 
 // Member functions
 float	Fixed::toFloat(void) const {
@@ -80,6 +109,29 @@ int		Fixed::toInt(void) const {
 	return fixedPointVal >> fractionalBits;
 }
 
+Fixed	&Fixed::min(Fixed &fpv1, Fixed &fpv2) {
+	if (fpv1 > fpv2)
+		return fpv2;
+	return fpv1;
+}
+const Fixed	&Fixed::min(const Fixed &fpv1, const Fixed &fpv2) {
+	if ((Fixed)fpv1 > fpv2)
+		return fpv2;
+	return fpv1;
+}
+
+Fixed	&Fixed::max(Fixed &fpv1, Fixed &fpv2) {
+	if (fpv1 < fpv2)
+		return fpv2;
+	return fpv1;
+}
+const Fixed	&Fixed::max(const Fixed &fpv1, const Fixed &fpv2) {
+	if ((Fixed)fpv1 < fpv2)
+		return fpv2;
+	return fpv1;
+}
+
+// getter, setter
 int		Fixed::getRawBits(void) const {
 	return fixedPointVal;
 }
