@@ -6,12 +6,13 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:22:49 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/28 15:40:50 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/28 16:09:04 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
 #include "../include/ScavTrap.hpp"
+#include "../include/FragTrap.hpp"
 
 int	main( void )
 {
@@ -35,5 +36,16 @@ int	main( void )
 		scav.beRepaired(2);
 		scav.takeDamage(15);
 		scav.guardGate();
+		std::cout << std::endl;
+	}
+	{
+		FragTrap Frag("FRAG");
+		FragTrap strap(Frag);
+		Frag.takeDamage(9);
+		Frag.beRepaired(15);
+		Frag.takeDamage(8);
+		Frag.beRepaired(2);
+		Frag.takeDamage(15);
+		Frag.highFivesGuys();
 	}
 }
