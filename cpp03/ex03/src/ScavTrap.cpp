@@ -6,12 +6,13 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:40:28 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/28 18:29:53 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/28 18:32:25 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void) {}
 ScavTrap::ScavTrap(const std::string name) : ClapTrap(name) {
 	this->hitPoints = 100;
 	this->energyPoints = 50;

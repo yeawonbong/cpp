@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/28 18:38:57 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/28 18:40:04 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ NAME = a.out
 SRC = src/ClapTrap.cpp\
 src/ScavTrap.cpp\
 src/FragTrap.cpp\
+src/DiamondTrap.cpp\
 src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
@@ -50,6 +51,7 @@ clean :
 	@echo -n "Cleaning obj files... "
 	@rm -rf $(OBJDIR)
 	@rm -f $(OBJ)
+	@rm -f *.o
 	@echo "✔"
 
 re : fclean all
