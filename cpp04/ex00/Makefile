@@ -6,15 +6,15 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/28 16:26:55 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/29 22:05:03 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
-SRC = src/ClapTrap.cpp\
-src/ScavTrap.cpp\
-src/FragTrap.cpp\
+SRC = src/Animal.cpp\
+src/Cat.cpp\
+src/Dog.cpp\
 src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
