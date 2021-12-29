@@ -6,24 +6,35 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:40:28 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/28 15:40:29 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/29 20:34:38 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScavTrap.hpp"
-
-ScavTrap::ScavTrap(const std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(void) {
+	std::cout << "<ScavTrap> Default Constructor called" << std::endl;
+}
+ScavTrap::ScavTrap(const std::string name) {
+	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	std::cout << "<ScavTrap> " << this->name << " Constructor called" << std::endl;
 }
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src) {
+ScavTrap::ScavTrap(const ScavTrap &src) {
 	*this = src;
 	std::cout << "<ScavTrap> " << this->name << " Copy Constructor called" << std::endl;
 }
 ScavTrap::~ScavTrap(void) {
 	std::cout << "<ScavTrap> " << this->name << " Destructor called" << std::endl;
+}
+ScavTrap	&ScavTrap::operator=(const ScavTrap &other) {
+	this->name = other.name + "_copy";
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
+	std::cout << "<ScavTrap> " << other.name << " Assignement operator call" << std::endl;
+	return *this;
 }
 
 void	ScavTrap::attack(std::string const &target) {

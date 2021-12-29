@@ -6,13 +6,15 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:22:53 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/28 18:31:34 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/29 19:38:47 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) {}
+ClapTrap::ClapTrap(void) {
+	std::cout << "<ClapTrap> Default Constructor called" << std::endl;
+}
 ClapTrap::ClapTrap(const std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "<ClapTrap> " << this->name << " Constructor called" << std::endl;
 }
@@ -22,6 +24,14 @@ ClapTrap::ClapTrap(const ClapTrap &src) {
 }
 ClapTrap::~ClapTrap(void) {
 	std::cout << "<ClapTrap> " << this->name << " Destructor called" << std::endl;
+}
+ClapTrap	&ClapTrap::operator=(const ClapTrap &other) {
+	this->name = other.name + "_copy";
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
+	std::cout << "<ClapTrap> " << other.name << " Assignement operator call" << std::endl;
+	return *this;
 }
 
 void	ClapTrap::attack(std::string const &target) {

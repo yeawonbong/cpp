@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:55:41 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/28 18:32:40 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/29 19:32:19 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	FragTrap(const std::string name);
 	FragTrap(const FragTrap &src);
 	~FragTrap(void);
+	FragTrap	&operator=(const FragTrap &other);	
 	void highFivesGuys(void);
 };
 

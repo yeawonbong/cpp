@@ -6,12 +6,14 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:22:53 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/27 17:22:53 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/29 19:53:35 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
-
+ClapTrap::ClapTrap(void) {
+	std::cout << "<ClapTrap> Default Constructor called" << std::endl;
+}
 ClapTrap::ClapTrap(const std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "Constructor called" << std::endl;
 }
@@ -31,6 +33,14 @@ void	ClapTrap::attack(std::string const &target) {
 	this->hitPoints -= 1; // hit point 역할이 뭐지? 일단 보류.
 	std::cout << "ClapTrap " << this->name << " attacks " << target \
 	<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
+}
+ClapTrap	&ClapTrap::operator=(const ClapTrap &other) {
+	this->name = other.name + "_copy";
+	this->hitPoints = other.hitPoints;
+	this->energyPoints = other.energyPoints;
+	this->attackDamage = other.attackDamage;
+	std::cout << "<ClapTrap> " << other.name << " Assignement operator call" << std::endl;
+	return *this;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {

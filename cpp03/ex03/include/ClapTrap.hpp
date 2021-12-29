@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:22:58 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/28 15:01:36 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/29 19:54:31 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ protected:
 	ClapTrap(void);
 
 public:
-
 	ClapTrap(const std::string name);
 	ClapTrap(const ClapTrap &src);
 	~ClapTrap(void);
+	ClapTrap	&operator=(const ClapTrap &other);
 
 	void	attack(std::string const &target);
 	void	takeDamage(unsigned int amount);
