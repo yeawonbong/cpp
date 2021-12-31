@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/30 16:39:35 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 21:58:30 by ybong            ###   ########.fr       */
+/*   Created: 2021/12/29 21:18:32 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/31 22:20:40 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-# include "Animal.hpp"
+# include "Brain.hpp"
+# include <iostream>
+# include <iomanip>
 
-class Cat : public Animal {
+# define NUM 5
+
+class Animal {
 protected:
+	std::string type;
 public:
-	Cat(void);
-	Cat(const Cat &src);
-	~Cat(void);
-	Cat& operator=(const Cat &src);
-
+	Animal(void);
+	Animal(const Animal &src);
+	virtual ~Animal(void);
+	virtual Animal &operator=(const Animal &src);
 	virtual void makeSound(void) const;
+
+	const std::string	&getType(void) const;
+	virtual Brain		*getBrain(void) const = 0; // 순수 가상함수
 };
 
+std::ostream	&operator<<(std::ostream &ostream, const Animal &instance);
 #endif
