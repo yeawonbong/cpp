@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/29 22:05:03 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/30 00:23:30 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,33 +21,36 @@ OBJ = $(SRC:.cpp=.o)
 OBJDIR = obj/
 
 CXX = clang++
-CXXFLAGES = -Wall -Wextra -Werror
+CXXFLAGES = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	@echo "Assembling $@: "
+$(NAME) : $(OBJ) $(OBJDIR)
+	@echo -n "Assembling [$@]... "
 	@$(CXX) $(CXXFLAGES) -o $@ $(OBJ)
+	@mv src/*.o $(OBJDIR)
 	@echo "✔"
-
-$(OBJ) : $(SRC) $(OBJDIR)
-	@echo "Compiling $^: "
-	@$(CXX) $(CXXFLAGES) -c $(SRC)
-	@mv *.o $(OBJDIR)
-	@echo "✔"
-
 
 $(OBJDIR) :
 	@mkdir $@
 
+$(OBJ) : $(SRC)
+	@echo -n "Compiling... "
+	@$(CXX) $(CXXFLAGES) -c $(SRC)
+	@mv *.o src
+	@echo "✔"
+
 fclean : clean
-	@echo "Cleaning all..: "
+	@echo -n "Cleaning all... "
 	@rm -f $(NAME)
 	@echo "✔"
 
 clean :
-	@echo "Cleaning obj files..: "
+	@echo -n "Cleaning obj files... "
 	@rm -rf $(OBJDIR)
+	@rm -f $(OBJ)
+	@rm -f *.o
+	@echo "✔"
 
 re : fclean all
 
