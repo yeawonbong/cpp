@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 18:24:55 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 23:02:34 by ybong            ###   ########.fr       */
+/*   Updated: 2021/12/31 23:10:59 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main()
 		
 		delete j; //should not create a leak
 		delete i;
-		system("leaks animals");
 	}
 	std::cout << std::endl;
 	
@@ -51,5 +50,5 @@ int main()
 		std::cout << "INDEX" << i << ". ";
 		delete animalArr[i];
 	}
-	system("leaks animals");
+	// Animal *a = new Animal();
 }
