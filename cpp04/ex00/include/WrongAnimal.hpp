@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/29 21:18:32 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 18:25:19 by ybong            ###   ########.fr       */
+/*   Created: 2021/12/31 18:25:13 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/31 18:25:13 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
 # include <iomanip>
 
-class Animal {
+class WrongAnimal
+{
 protected:
 	std::string type;
 public:
-	Animal(void);
-	Animal(const Animal &src);
-	~Animal(void);
-	Animal &operator=(const Animal &src);
+	WrongAnimal(void);
+	WrongAnimal(const WrongAnimal &src);
+	~WrongAnimal(void);
 
-	virtual void makeSound(void) const;
+	WrongAnimal	&operator=(const WrongAnimal &other);
 
+	void	makeSound(void) const; // not virtual
+	
 	const std::string	&getType(void) const;
 };
 
-std::ostream	&operator<<(std::ostream &ostream, const Animal &instance);
+std::ostream	&operator<<(std::ostream &ostream, const WrongAnimal &instance);
+
 #endif

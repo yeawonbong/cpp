@@ -1,14 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/31 18:25:04 by ybong             #+#    #+#             */
+/*   Updated: 2021/12/31 18:25:04 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Dog.hpp"
 
 Dog::Dog(void) {
-	std::cout << "<Dog> Default Constructor called" << std::endl;
+	this->type = "DOG";
+	std::cout << std::left;
+	std::cout << std::setw(13) << "<Dog>" << " Default Constructor called" << std::endl;
 }
 Dog::Dog(const Dog &src) {
 	this->type = src.type;
-	std::cout << "<Dog> Copy Constructor called" << std::endl;
+	std::cout << std::left;
+	std::cout << std::setw(13) << "<Dog>" << " Copy Constructor called" << std::endl;
 }
 Dog::~Dog(void) {
-	std::cout << "<Dog> Destructor called" << std::endl;
+	std::cout << std::left;
+	std::cout << std::setw(13) << "<Dog>" << " Destructor called" << std::endl;
 }
 Dog& Dog::operator=(const Dog &src) {
 	this->type = src.type;
@@ -16,5 +32,6 @@ Dog& Dog::operator=(const Dog &src) {
 }
 
 void	Dog::makeSound(void) const {
-	std::cout << "🐶 Woof!" << std::endl;
+	std::cout << std::left;
+	std::cout << std::setw(13) << "<Dog>" << " 🐶 Woof!" << std::endl;
 }

@@ -6,15 +6,19 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2021/12/30 00:23:30 by ybong            ###   ########.fr        #
+#    Updated: 2021/12/31 17:57:01 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+SHELL = bash
 
 NAME = a.out
 
 SRC = src/Animal.cpp\
 src/Cat.cpp\
 src/Dog.cpp\
+src/WrongAnimal.cpp\
+src/WrongCat.cpp\
 src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
