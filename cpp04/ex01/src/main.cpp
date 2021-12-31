@@ -23,7 +23,7 @@ int main()
 		
 		delete j; //should not create a leak
 		delete i;
-		system("leaks animals")
+		system("leaks animals");
 	}
 	std::cout << std::endl;
 	
