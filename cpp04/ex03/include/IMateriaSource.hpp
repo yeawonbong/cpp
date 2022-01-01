@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 21:18:32 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/01 23:23:17 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/02 00:39:01 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <iomanip>
 
 # include "AMateria.hpp"
-
-class ICharacter;
 
 class IMateriaSource {
 

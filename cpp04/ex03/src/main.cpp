@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/02 00:50:24 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/02 00:50:24 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/MateriaSource.hpp"
 #include "../include/Ice.hpp"
 #include "../include/Cure.hpp"
@@ -17,8 +29,11 @@ int main()
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	// me->unequip(1);
+	// me->use(1, *bob);
 	delete bob;
 	delete me;
 	delete src;
+	system("leaks materia");
 	return 0;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/02 00:50:27 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/02 00:50:27 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void) : sourceNum(0) {
@@ -7,6 +19,9 @@ MateriaSource::MateriaSource(void) : sourceNum(0) {
 	}
 }
 MateriaSource::~MateriaSource(void) {
+	for (int i=0; i < this->sourceNum; i++) {
+		delete this->source[i];
+	}
 	std::cout << std::setw(17) << std::left << "<MateriaSource>" << "Destructor called" << std::endl;		
 }
 
