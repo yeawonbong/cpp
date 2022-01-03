@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 18:25:04 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 22:23:02 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/03 18:24:29 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ Dog::~Dog(void) {
 }
 Dog& Dog::operator=(const Dog &src) {
 	std::cout << "<Dog> assignment operator called" << std::endl;
-	this->type = src.type;
-	this->brain = src.brain;
+	this->type = src.getType();
+	this->brain = src.getBrain();
 	return *this;
 }
 Animal &Dog::operator=(const Animal &src) {

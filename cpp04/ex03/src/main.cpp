@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 00:50:24 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/02 00:50:24 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/03 18:40:50 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	std::cout << "\n\n";
 	system("leaks materia");
 	return 0;
 }

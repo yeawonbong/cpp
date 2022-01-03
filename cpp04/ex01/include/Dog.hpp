@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 16:39:38 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 22:26:29 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/03 18:22:42 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ public:
 	Dog(void);
 	Dog(const Dog &src);
 	~Dog(void);
+	
 	virtual Dog		&operator=(const Dog &src);
 	virtual Animal	&operator=(const Animal &src);
 
-	virtual void 	makeSound(void) const;
-	virtual Brain	*getBrain(void) const;
+	void 	makeSound(void) const;
+	Brain	*getBrain(void) const;
 };
 
 #endif
