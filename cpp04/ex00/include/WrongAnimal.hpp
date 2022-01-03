@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 18:25:13 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 18:25:13 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/03 17:42:08 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ protected:
 public:
 	WrongAnimal(void);
 	WrongAnimal(const WrongAnimal &src);
-	~WrongAnimal(void);
+	~WrongAnimal(void); // not virtual (wrong)
 
 	WrongAnimal	&operator=(const WrongAnimal &other);
 
-	void	makeSound(void) const; // not virtual
+	void	makeSound(void) const; // not virtual (wrong)
 	
 	const std::string	&getType(void) const;
 };

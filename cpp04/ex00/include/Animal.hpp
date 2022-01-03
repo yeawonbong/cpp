@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 21:18:32 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/03 17:05:14 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/03 17:38:49 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 public:
 	Animal(void);
 	Animal(const Animal &src);
-	~Animal(void);
+	virtual ~Animal(void);
 	Animal &operator=(const Animal &src);
 
 	virtual void makeSound(void) const;
