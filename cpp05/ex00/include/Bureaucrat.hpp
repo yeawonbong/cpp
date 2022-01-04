@@ -20,8 +20,14 @@ public:
 
 	Bureaucrat	&operator=(const Bureaucrat &other);
 
-	clss	GradeTooHighException : public std::exception;
-	clss	GradeTooLowException : public std::exception;
+	class	GradeTooHighException : public std::exception 
+	{
+	public:
+		const char* what() const throw();
+	};
+	class	GradeTooLowException : public std::exception {
+		const char* what() const throw();
+	};
 
 	void	increment();
 	void	decrement();

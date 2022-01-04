@@ -14,11 +14,7 @@ SHELL = bash
 
 NAME = a.out
 
-SRC = src/Animal.cpp\
-src/Cat.cpp\
-src/Dog.cpp\
-src/WrongAnimal.cpp\
-src/WrongCat.cpp\
+SRC = src/Bureaucrat.cpp\
 src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
