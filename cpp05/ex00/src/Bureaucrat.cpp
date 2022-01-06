@@ -1,30 +1,60 @@
 #include "../include/Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name(""), grade(150) {}
+bool	Bureaucrat::verbose = false;
+
+Bureaucrat::Bureaucrat() : name(""), grade(Bureaucrat::lowestGrade) {
+	if (Bureaucrat::verbose == true)
+		std::cout << "Default Constructor called" << std::endl;
+}
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
-	if (grade < 0)
-		throw GradeTooHighException();
-	else if (grade > 150)
-		throw GradeTooLowException();
+	checkGrade();
+	if (Bureaucrat::verbose == true)
+		std::cout << "Standard Constructor called" << std::endl;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &src) {
+	if (Bureaucrat::verbose == true)
+		std::cout << "Copy Constructor called" << std::endl;
 	*this = src;
 }
-Bureaucrat::~Bureaucrat() {}
+Bureaucrat::~Bureaucrat() {
+	if (Bureaucrat::verbose == true)
+		std::cout << "Destructor called" << std::endl;
+}
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other) {
-	// this->name = other.name;
+	if (Bureaucrat::verbose == true)
+		std::cout << "Assignment operator called" << std::endl;	
 	this->grade = other.grade;
+	return *this;
 }
-const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade Too High";
-}
-const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade Too Low";
-}
-void	Bureaucrat::increment() {
-	this->grade++;
-	if (grade < 0)
+
+void	Bureaucrat::checkGrade(void) const {
+	if (grade < highestGrade)
 		throw GradeTooHighException();
-	else if (grade > 150)
+	else if (grade > lowestGrade)
 		throw GradeTooLowException();
+}
+
+void	Bureaucrat::increment() {
+	if (Bureaucrat::verbose == true)
+		std::cout << "Increment function called" << std::endl;
+	this->grade--;
+	checkGrade();
+}
+void	Bureaucrat::decrement() {
+	if (Bureaucrat::verbose == true)
+		std::cout << "Decrement function called" << std::endl;
+	this->grade++;
+	checkGrade();
+}
+
+const std::string	&Bureaucrat::getName() const {
+	return this->name;
+}
+int			Bureaucrat::getGrade() const {
+	return this->grade;
+}
+
+std::ostream	&operator<<(std::ostream &ostream, const Bureaucrat &instance) {
+	ostream << instance.getName() << ", bureaucrat grade, " << instance.getGrade() << std::endl;
+	return ostream;
 }
