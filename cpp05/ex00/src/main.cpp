@@ -14,7 +14,7 @@ int main(void) {
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << BLUE << "Exception: " << e.what() << std::endl << RESET;
 	}
 
 	std::cout << std::endl;
@@ -31,7 +31,7 @@ int main(void) {
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << BLUE << "Exception: " << e.what() << std::endl << RESET;
 	}
 
 	std::cout << std::endl;
@@ -44,7 +44,7 @@ int main(void) {
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << BLUE << "Exception: " << e.what() << std::endl << RESET;
 	}
 	std::cout << std::endl;
 
@@ -58,7 +58,7 @@ int main(void) {
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << BLUE << "Exception: " << e.what() << std::endl << RESET;
 	}
 	std::cout << std::endl;
 }

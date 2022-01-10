@@ -3,7 +3,6 @@
 
 # include <iostream>
 # include <stdexcept>
-
 # define BLUE "\033[1;34m"
 # define GRAY "\033[1;30m"
 # define RESET "\033[1;0m"

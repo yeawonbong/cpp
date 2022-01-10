@@ -1,12 +1,12 @@
 #include "../include/Bureaucrat.hpp"
 
-bool	Bureaucrat::verbose = false;
+bool	Bureaucrat::verbose = true;
 
 Bureaucrat::Bureaucrat() : name(""), grade(Bureaucrat::lowestGrade) {
 	if (Bureaucrat::verbose == true)
 		std::cout << "Default Constructor called" << std::endl;
 }
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade) {
 	checkGrade();
 	if (Bureaucrat::verbose == true)
 		std::cout << "Standard Constructor called" << std::endl;
