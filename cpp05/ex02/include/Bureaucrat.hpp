@@ -3,16 +3,18 @@
 
 # include <iostream>
 # include <stdexcept>
+# include "Form.hpp"
 # define BLUE "\033[1;34m"
 # define GRAY "\033[1;30m"
 # define RESET "\033[1;0m"
 
+class Form;
 class Bureaucrat
 {
 private:
 
 	const std::string	name;
-	int	grade; // 1~150
+	int	grade;
 
 	static const int	lowestGrade = 150;
 	static const int	highestGrade = 1;
@@ -31,6 +33,7 @@ public:
 	
 	void		increment();
 	void		decrement();
+	void		executeForm(Form const &form) const;
 
 	const std::string	&getName() const;
 	int					getGrade() const;

@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/10 17:38:08 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/13 18:54:29 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ NAME = a.out
 
 SRC = src/Bureaucrat.cpp\
 src/Form.cpp\
+src/PresidentialPardonForm.cpp\
+src/RobotomyRequestForm.cpp\
+src/ShrubberyCreationForm.cpp\
 src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)

@@ -28,7 +28,7 @@ Form &Form::operator=(const Form &other) {
 		std::cout << "<Form> Assignment operator called" << std::endl;
 	return *this;
 }
-void	Form::checkGrade(int grade) const {
+void	Form::checkGrade(int grade) const throw(GradeTooHighException, GradeTooLowException){
 	if (grade < highestGrade)
 		throw GradeTooHighException();
 	else if (grade > lowestGrade)
@@ -48,6 +48,12 @@ bool	Form::beSigned(Bureaucrat &bureaucrat) {
 		std::cout << BLUE << bureaucrat.getName() + " cannot sign " + this->getName() + " because the grade is not high enough." << std::endl << RESET;
 	}
 	return false;
+}
+
+void	Form::checkExecutable(const Bureaucrat &executor) const throw(NotExecutableExeption)
+{
+	if ((this->gradeToSign > executor.getGrade()) || this->getIsSingned() == false)
+		throw NotExecutableExeption();
 }
 
 const std::string	Form::getName() const {

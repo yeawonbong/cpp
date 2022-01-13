@@ -6,24 +6,27 @@
 
 class Form 
 {
-private:
+protected:
 	Form();
 	const std::string name;
 	bool		isSigned;
 	const int	gradeToSign;
 	const int	gradeToExecute;
+	const std::string	target;
 
 	static const int	lowestGrade = 150;
 	static const int	highestGrade = 1;
-	void	checkGrade(int grade) const;
 
 public:
 	Form(const std::string name, const int gradeToSign, const int gradeToExecute);
 	Form(const Form &src);
-	~Form();
+	virtual ~Form();
 	Form	&operator=(const Form &other);
 
-	bool	beSigned(Bureaucrat &bureaucrat);
+	void			checkGrade(int grade) const;
+	bool			beSigned(Bureaucrat &bureaucrat);
+	void			checkExecutable(const Bureaucrat &executor) const;
+	virtual void	execute(const Bureaucrat &executor) const = 0;
 
 	const std::string	getName() const;
 	bool				getIsSingned() const;
@@ -42,6 +45,11 @@ public:
 	class	GradeTooLowException : public std::exception {
 		const char* what() const throw() {
 			return "Grade Too Low";
+		}
+	};
+	class	NotExecutableExeption : public std::exception {
+		const char* what() const throw() {
+			return "Not Executable. Because the level is not high enough, or the Form is not signed";
 		}
 	};
 };

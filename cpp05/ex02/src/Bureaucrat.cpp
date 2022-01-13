@@ -47,6 +47,11 @@ void	Bureaucrat::decrement() {
 	checkGrade();
 }
 
+void	Bureaucrat::executeForm(Form const &form) const {
+	form.execute(*this);
+	std::cout << this->getName() << " executes " << form.getName() << std::endl;
+}
+
 const std::string	&Bureaucrat::getName() const {
 	return this->name;
 }
