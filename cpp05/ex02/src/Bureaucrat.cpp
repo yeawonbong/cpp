@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/14 16:02:37 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/14 16:02:37 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Bureaucrat.hpp"
 
 bool	Bureaucrat::verbose = true;
@@ -47,9 +59,9 @@ void	Bureaucrat::decrement() {
 	checkGrade();
 }
 
-void	Bureaucrat::executeForm(Form const &form) const {
+void	Bureaucrat::executeForm(const Form &form) const {
+	std::cout << BLUE << this->getName() << " executes " << form.getName() << std::endl << RESET;
 	form.execute(*this);
-	std::cout << this->getName() << " executes " << form.getName() << std::endl;
 }
 
 const std::string	&Bureaucrat::getName() const {

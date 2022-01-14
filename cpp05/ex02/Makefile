@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/13 18:54:29 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/14 16:01:04 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ clean :
 	@rm -rf $(OBJDIR)
 	@rm -f $(OBJ)
 	@rm -f *.o
+	@rm -f *_shrubbery
 	@echo "✔"
 
 re : fclean all

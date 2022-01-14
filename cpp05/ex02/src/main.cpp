@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/14 16:01:57 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/14 16:01:57 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Bureaucrat.hpp"
 #include "../include/Form.hpp"
 #include "../include/PresidentialPardonForm.hpp"
@@ -6,7 +18,7 @@
 
 int main(void) {
 	Bureaucrat::verbose = false;
-	Form::verbose = false;
+	Form::verbose = true;
 
 	Bureaucrat amy("Amy", 1);
 	Bureaucrat billy("Billy", 70);
@@ -17,61 +29,59 @@ int main(void) {
 	try
 	{
 		Form *form = new ShrubberyCreationForm("Form1");
-		std::cout << form;
+		std::cout << *form;
+		form->beSigned(carrol);
+		form->beSigned(amy);
 		amy.executeForm(*form);
 		billy.executeForm(*form);
 		carrol.executeForm(*form);
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << RED << "Exception: " << e.what() << std::endl << RESET;
 	}
 
 	std::cout << std::endl;
-	// std::cout << "<Testing Signing Form>" << std::endl;
-	// try
-	// {
-	// 	Bureaucrat br("testbr", 2);
-	// 	Form	Form2("Form2", 3, 5);
-	// 	std::cout << Form2;
-	// 	Form2.beSigned(br);
-	// 	std::cout << Form2;
+	std::cout << "<Testing RobotomyRequestForm>" << std::endl;
+	try
+	{
+		Form *form = new RobotomyRequestForm("Form2");
+		std::cout << *form;
+		form->beSigned(carrol);
+		form->beSigned(amy);
+		amy.executeForm(*form);
+		amy.executeForm(*form);
+		amy.executeForm(*form);
+		amy.executeForm(*form);
+		amy.executeForm(*form);
+		billy.executeForm(*form);
+		billy.executeForm(*form);
+		billy.executeForm(*form);
+		billy.executeForm(*form);
+		billy.executeForm(*form);
+		billy.executeForm(*form);
+		carrol.executeForm(*form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Exception: " << e.what() << std::endl << RESET;
+	}
 
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cout << "Exception: " << e.what() << std::endl;
-	// }
-	// std::cout << std::endl;
-
-	// // std::cout << std::endl;
-	// std::cout << "<Testing Signing Form-Failed>" << std::endl;
-	// try
-	// {
-	// 	Bureaucrat br("testbr", 100);
-	// 	Form	Form2("Form2", 3, 5);
-	// 	std::cout << Form2;
-	// 	Form2.beSigned(br);
-	// 	std::cout << Form2;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cout << "Exception: " << e.what() << std::endl;
-	// }
-
-	// std::cout << std::endl;
-	// std::cout << "<Testing Signing Form-Failed (already singed Form)>" << std::endl;
-	// try
-	// {
-	// 	Bureaucrat br("testbr", 1);
-	// 	Form	Form2("Form2", 3, 5);
-	// 	std::cout << Form2;
-	// 	Form2.beSigned(br);
-	// 	std::cout << Form2;
-	// 	Form2.beSigned(br);
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cout << "Exception: " << e.what() << std::endl;
-	// }
+	std::cout << std::endl;
+	std::cout << "<Testing PresidentialPardonForm>" << std::endl;
+	try
+	{
+		Form *form = new PresidentialPardonForm("Form3");
+		std::cout << *form;
+		// amy.executeForm(*form);
+		form->beSigned(carrol);
+		form->beSigned(amy);
+		amy.executeForm(*form);
+		billy.executeForm(*form);
+		carrol.executeForm(*form);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << RED << "Exception: " << e.what() << std::endl << RESET;
+	}
 }

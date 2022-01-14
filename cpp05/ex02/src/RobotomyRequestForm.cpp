@@ -1,22 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/14 16:02:44 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/14 16:02:44 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) 
-: Form("RobotomyRequestForm", 72, 45), target(target)
+: Form("RobotomyRequestForm", 72, 45)
 {
+	this->target = target;
 	if (RobotomyRequestForm::verbose)
 		std::cout << "<RobotomyRequestForm> Standard constructor called" << std::endl; 
 }
 
 RobotomyRequestForm::RobotomyRequestForm(void)
-: Form("RobotomyRequestForm", 72, 45), target("")
+: Form("RobotomyRequestForm", 72, 45)
 {
+	this->target = "";
 	if (RobotomyRequestForm::verbose)
 		std::cout << "<RobotomyRequestForm> Default constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src)
-: Form("RobotomyRequestForm", 72, 45), target(src.getTarget())
+: Form("RobotomyRequestForm", 72, 45)
 {
+	this->target = src.getTarget();
 	if (RobotomyRequestForm::verbose)
 		std::cout << "<RobotomyRequestForm> Copy constructor called" << std::endl;
 }
@@ -29,22 +44,18 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &instance)
 {
+	this->target = instance.getTarget();
 	if (RobotomyRequestForm::verbose)
 		std::cout << "<RobotomyRequestForm> Assignment operator called (but nothing is copied)" << std::endl;
 	return *this;
 }
 
-const std::string &RobotomyRequestForm::getTarget(void) const
-{
-	return this->target;
-}
-
 void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	this->checkExecutable(executor);
-	std::cout << "<RobotomyRequestForm> * drilling noises *" << std::endl;
+	std::cout << LBLUE << "<RobotomyRequestForm> * drilling noises *" << std::endl << RESET;
 	if (rand() % 2)
-    std::cout << "<RobotomyRequestForm> " << this->getTarget() << " has been robotomized successfully" << std::endl;
+    std::cout << LBLUE << "<RobotomyRequestForm> " << this->getTarget() << " has been robotomized successfully" << std::endl << RESET;
   else
-    std::cout << "<RobotomyRequestForm> " << this->getTarget() << " has failed to be robotomized" << std::endl;
+    std::cout << LBLUE << "<RobotomyRequestForm> " << this->getTarget() << " has failed to be robotomized" << std::endl << RESET;
 }

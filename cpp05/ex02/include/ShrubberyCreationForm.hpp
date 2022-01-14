@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/14 16:02:23 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/14 16:02:23 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
@@ -8,7 +20,6 @@
 class ShrubberyCreationForm : public Form
 {
 private:
-	const std::string	target;
 	ShrubberyCreationForm(void);
 
 public:
@@ -19,9 +30,6 @@ public:
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &instance);
 
 	virtual void		execute(const Bureaucrat &executor) const;
-	const std::string	&getTarget(void) const;
-
-	static bool	verbose;
 };
 
 #endif

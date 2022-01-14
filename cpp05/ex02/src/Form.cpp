@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/14 16:02:03 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/14 16:02:06 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Form.hpp"
 
 bool Form::verbose = true;
@@ -42,20 +54,23 @@ bool	Form::beSigned(Bureaucrat &bureaucrat) {
 		return true;
 	}
 	if (this->getIsSingned()) {
-		std::cout << BLUE << bureaucrat.getName() + " cannot sign " + this->getName() + " because it is already signed." << std::endl << RESET;
+		std::cout << RED << bureaucrat.getName() + " cannot sign " + this->getName() + " because it is already signed." << std::endl << RESET;
 	}
-	if (this->getGradeToSign() < bureaucrat.getGrade()) {
-		std::cout << BLUE << bureaucrat.getName() + " cannot sign " + this->getName() + " because the grade is not high enough." << std::endl << RESET;
+	else if (this->getGradeToSign() < bureaucrat.getGrade()) {
+		std::cout << RED << bureaucrat.getName() + " cannot sign " + this->getName() + " because the grade is not high enough." << std::endl << RESET;
 	}
 	return false;
 }
 
 void	Form::checkExecutable(const Bureaucrat &executor) const throw(NotExecutableExeption)
 {
-	if ((this->gradeToSign > executor.getGrade()) || this->getIsSingned() == false)
+	if ((this->gradeToSign < executor.getGrade()) || this->getIsSingned() == false)
 		throw NotExecutableExeption();
 }
 
+const std::string	&Form::getTarget() const {
+	return this->target;
+}
 const std::string	Form::getName() const {
 	return this->name;
 }
