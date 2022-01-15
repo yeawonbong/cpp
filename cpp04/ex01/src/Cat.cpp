@@ -6,17 +6,17 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 18:25:06 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 22:32:33 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/15 21:34:02 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Cat.hpp"
 
 Cat::Cat(void) {
+	std::cout << std::setw(13) << "<Cat>" << " Default Constructor called" << std::endl;
 	this->type = "CAT";
 	this->brain = new Brain;
 	std::cout << std::left;
-	std::cout << std::setw(13) << "<Cat>" << " Default Constructor called" << std::endl;
 }
 Cat::Cat(const Cat &src) {
 	this->type = src.type;

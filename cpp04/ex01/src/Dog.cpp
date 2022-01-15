@@ -6,17 +6,17 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 18:25:04 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/03 18:24:29 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/15 21:34:09 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Dog.hpp"
 
 Dog::Dog(void) {
+	std::cout << std::setw(13) << "<Dog>" << " Default Constructor called" << std::endl;
 	this->type = "DOG";
 	this->brain = new Brain;
 	std::cout << std::left;
-	std::cout << std::setw(13) << "<Dog>" << " Default Constructor called" << std::endl;
 }
 Dog::Dog(const Dog &src) {
 	this->type = src.type;

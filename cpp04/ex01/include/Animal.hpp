@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 21:18:32 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/03 18:36:59 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/15 21:31:22 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	
 	virtual Animal &operator=(const Animal &src);
 
-	virtual void 		makeSound(void) const;
+	virtual void 		makeSound(void) const = 0;
 	const std::string	&getType(void) const;
 	virtual Brain		*getBrain(void) const = 0; // 순수 가상함수
 };
