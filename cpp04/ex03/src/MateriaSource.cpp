@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 00:50:27 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/02 00:50:27 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 01:49:18 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ MateriaSource::MateriaSource(void) : sourceNum(0) {
 		this->source[i] = 0;
 	}
 }
+
 MateriaSource::~MateriaSource(void) {
 	for (int i=0; i < this->sourceNum; i++) {
 		delete this->source[i];
@@ -34,6 +35,7 @@ void		MateriaSource::learnMateria(AMateria* m) {
 		std::cout << std::setw(17) << std::left << "<MateriaSource>" << "Learn Failed: Source memory is full" << std::endl;
 
 }
+
 AMateria	*MateriaSource::createMateria(std::string const &type) {
 	for (int i=0; i < this->sourceNum; i++) {
 		if (this->source[i]->getType() == type) {

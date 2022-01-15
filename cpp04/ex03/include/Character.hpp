@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 21:17:59 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/11 12:09:17 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 01:48:48 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "ICharacter.hpp"
 class Character : public ICharacter
 {
+
 private:
 
 	Character(void);

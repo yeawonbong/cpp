@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 00:50:17 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/02 00:50:17 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 01:47:52 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@ Character::Character(const std::string &name) : name(name), equipNum(0) {
 		this->inventory[i] = 0;
 	}
 }
-Character::Character(const Character & src)
-{
+Character::Character(const Character & src) {
 	std::cout << std::setw(17) << std::left << "<Character>" << "Copy constructor called" << std::endl;
 	*this = src;
 }
-Character::~Character(void)
-{
+
+Character::~Character(void) {
 	std::cout << std::setw(17) << std::left << "<Character>" << "Destructor called" << std::endl;
 }
 

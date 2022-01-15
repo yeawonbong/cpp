@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 00:50:21 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/02 00:50:22 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 01:51:34 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ Ice::Ice(Ice const &src) : AMateria("ice") {
 }
 Ice::~Ice(void) {
 	std::cout << std::left << std::setw(17) << "<Ice>" << "Destructor called" << std::endl;
+}
+
+Ice			&Ice::operator=(const Ice &other) {
+	std::cout << std::left << std::setw(17) << "<Ice>" << "Assignment operator called" << std::endl;
+	this->type = other.getType();
+	return *this;
 }
 
 AMateria	*Ice::clone(void) const {
