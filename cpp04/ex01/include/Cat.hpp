@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 16:39:35 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/03 18:22:39 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 01:50:15 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 # include "Brain.hpp"
 
 class Cat : public Animal {
+
 private:
 	Brain	*brain;
+
 public:
 	Cat(void);
 	Cat(const Cat &src);

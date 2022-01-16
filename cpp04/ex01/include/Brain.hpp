@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 19:06:31 by ybong             #+#    #+#             */
-/*   Updated: 2021/12/31 21:39:09 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 01:49:56 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class Brain 
 {
-private:
-
 public:
 	std::string	ideas[100];
 	Brain(void);
