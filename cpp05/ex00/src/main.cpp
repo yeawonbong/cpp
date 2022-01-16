@@ -1,6 +1,8 @@
 #include "../include/Bureaucrat.hpp"
 
 int main(void) {
+	Bureaucrat::verbose = false;
+
 	std::cout << std::endl;
 	std::cout << "<Testing decrement function>" << std::endl;
 	try

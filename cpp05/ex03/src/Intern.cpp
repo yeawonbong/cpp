@@ -1,6 +1,6 @@
 #include "../include/Intern.hpp"
 
-bool Intern::verbose = true;
+bool Intern::verbose = false;
 
 Intern::Intern() {
 	if (Intern::verbose)
@@ -32,7 +32,7 @@ std::string Intern::strArr[3] = {
 };
 
 Form	*Intern::makeForm(std::string formName, std::string target) {
-	Form *res;
+	Form *res=0;
 	Form *formArr[3] = {
 		new ShrubberyCreationForm(target),
 		new RobotomyRequestForm(target),
@@ -44,6 +44,9 @@ Form	*Intern::makeForm(std::string formName, std::string target) {
 		else
 			delete formArr[i];
 	}
-	std::cout << BLUE << "Intern creates " << res->getName() << std::endl << RESET;
+	if (res)
+		std::cout << BLUE << "Intern creates " << res->getName() << std::endl << RESET;
+	else
+		std::cout << BLUE << "Intern cannot create the form (Invalid Form name)" << std::endl << RESET;
 	return res;
 }
