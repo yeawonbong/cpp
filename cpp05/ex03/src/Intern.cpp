@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 16:04:22 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/16 16:04:23 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 16:19:58 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ Form	*Intern::makeForm(std::string formName, std::string target) {
 	if (res)
 		std::cout << BLUE << "Intern creates " << res->getName() << std::endl << RESET;
 	else
-		std::cout << BLUE << "Intern cannot create the form (Invalid Form name)" << std::endl << RESET;
+		std::cout << RED << "Intern cannot create the form (Invalid Form name)" << std::endl << RESET;
 	return res;
 }

@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:02:44 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/14 18:13:52 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/16 16:14:35 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	RobotomyRequestForm::execute(const Bureaucrat &executor) const
 	this->checkExecutable(executor);
 	std::cout << LBLUE << "<RobotomyRequestForm> * drilling noises *" << std::endl << RESET;
 	if (rand() % 2)
-    std::cout << LBLUE << "<RobotomyRequestForm> " << this->getTarget() << " has been robotomized successfully" << std::endl << RESET;
-  else
-    std::cout << LBLUE << "<RobotomyRequestForm> " << this->getTarget() << " has failed to be robotomized" << std::endl << RESET;
+		std::cout << LBLUE << "<RobotomyRequestForm> " << this->getTarget() << " has been robotomized successfully" << std::endl << RESET;
+	else
+		std::cout << LBLUE << "<RobotomyRequestForm> " << this->getTarget() << " has failed to be robotomized" << std::endl << RESET;
 }
