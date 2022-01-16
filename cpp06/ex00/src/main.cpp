@@ -6,6 +6,12 @@ int main(int argc, char **argv)
 		return 0;
 	std::string input(argv[1]);
 	Converter converter(input);
-	const Converter &c = Converter(input);
+	try {
+		converter.convert();
+		converter.printVals();
+	}
+	catch(std::exception &e) {
+		std::cout << RED << "Exception: " << e.what() << std::endl << RESET;
+	}
 	return 0;
 }
