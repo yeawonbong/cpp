@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:20:24 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/17 17:20:25 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/17 18:25:34 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	Converter::convert() throw(InvalidInputException) {
 		parseNum();
 	else if (0 <= str[0] && str[0] <= 127 && !str[1]) {
 		cVal = str[0];
-		dVal = (double)cVal;
+		dVal = static_cast<double>(cVal);
 	}
 	else
 		throw InvalidInputException();
@@ -85,7 +85,7 @@ void	Converter::parseNum() throw(InvalidInputException) {
 		}
 	}
 	std::stringstream(str) >> dVal;
-	cVal = (char)dVal;
+	cVal = static_cast<char>(dVal);
 }
 
 void	Converter::printVals() const {
@@ -101,14 +101,14 @@ std::string	Converter::getCVal() const {
 		return ("impossible");
 	else if (dVal < 32 || dVal == 127)
 		return ("Non displayable");
-	return "'" + std::string(&cVal) + "'";
+	return "'" + static_cast<std::string>(&cVal) + "'";
 }
 
 std::string Converter::getIVal() const {
 	if (type != INIT || dVal < INT_MIN || INT_MAX < dVal)
 		return ("impossible");
 	std::stringstream res;
-	res << (int)dVal;
+	res << static_cast<int>(dVal);
 	return res.str();
 }
 
@@ -120,9 +120,8 @@ std::string Converter::getFVal() const {
 		default:	break;
 	}
 	std::stringstream res;
-	res << (float)dVal;
+	res << static_cast<float>(dVal);
 	std::string restr = res.str();
-
 	for (int i=0; restr[i]; i++) {
 		if (i != 0 && !isdigit(restr[i]))
 			return(restr + "f");

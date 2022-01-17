@@ -6,15 +6,19 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/17 18:56:50 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/17 20:09:27 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL = bash
 
-NAME = serialize
+NAME = identify
 
-SRC = main.cpp
+SRC = src/Base.cpp\
+src/A.cpp\
+src/B.cpp\
+src/C.cpp\
+src/main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 OBJDIR = obj/
@@ -27,7 +31,7 @@ all : $(NAME)
 $(NAME) : $(OBJ) $(OBJDIR)
 	@echo -n "Assembling [$@]... "
 	@$(CXX) $(CXXFLAGES) -o $@ $(OBJ)
-	@mv *.o $(OBJDIR)
+	@mv src/*.o $(OBJDIR)
 	@echo "✔"
 
 $(OBJDIR) :
@@ -36,6 +40,7 @@ $(OBJDIR) :
 $(OBJ) : $(SRC)
 	@echo -n "Compiling... "
 	@$(CXX) $(CXXFLAGES) -c $(SRC)
+	@mv *.o src
 	@echo "✔"
 
 fclean : clean
