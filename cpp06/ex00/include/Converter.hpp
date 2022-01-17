@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Converter.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/17 17:20:19 by ybong             #+#    #+#             */
+/*   Updated: 2022/01/17 17:20:20 by ybong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONVERTER_HPP
 # define CONVERTER_HPP
 
 # include <iostream>
 # include <stdexcept>
 # include <sstream>
+# include <limits>
 
 # define BLUE "\033[1;34m"
 # define LBLUE "\033[34m"
@@ -12,7 +25,7 @@
 # define RED "\033[1;31m"
 
 enum types {
-	CHAR, INT, FLOAT, DOUBLE
+	INIT, INF, MINF, NAN
 };
 
 class Converter
@@ -29,7 +42,7 @@ public:
 	{
 	public:
 		const char* what() const throw() {
-			return "Invalid Input!";
+			return "Invalid Input!\nInput must belong to one of these [ char, int, float, double ]";
 		}
 	};
 
@@ -38,11 +51,11 @@ private:
 	Converter(void);
 
 	std::string str;
+	types		type;
 	char		cVal;
-	int			iVal;
-	float		fVal;
 	double		dVal;
 
+	bool	parseNanInf();
 	void	parseNum() throw(InvalidInputException);
 	std::string getCVal() const;
 	std::string getIVal() const;
@@ -59,8 +72,3 @@ public:
 };
 
 #endif
-
-/* TO DO (22.01.17.MON)
-- inf, nan 처리해주기
-- 정수 범위 설정 해주기 (overflow)
-*/

@@ -6,13 +6,13 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/16 02:23:58 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/17 17:20:29 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL = bash
 
-NAME = a.out
+NAME = converter
 
 SRC = src/Converter.cpp\
 src/main.cpp
@@ -21,7 +21,7 @@ OBJ = $(SRC:.cpp=.o)
 OBJDIR = obj/
 
 CXX = clang++
-CXXFLAGES = #-Wall -Wextra -Werror -std=c++98
+CXXFLAGES = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
