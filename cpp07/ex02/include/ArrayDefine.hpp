@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:48 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/18 18:47:19 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/19 18:22:30 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Array.hpp"
 
 template <typename T>
-bool Array<T>::verbose = true;
+bool Array<T>::verbose = false;
 
 template <typename T>
 Array<T>::Array() : array(new T[0]), arrSize(0) {
@@ -68,17 +68,9 @@ Array<T>	&Array<T>::operator=(const Array<T> &src) {
 
 template <typename T>
 T	&Array<T>::operator[](const unsigned int idx) const throw(std::exception) {
-	try {
-		if (arrSize <= idx)
-			throw std::exception(){
-			public:
-				const char* what() const throw() {
-					return "index is out of the limits!";
-			};
-		}
-	}
-	catch ()
-
+	if (arrSize <= idx)
+		throw std::overflow_error("index is out of the limits!");
+	return array[idx];
 }
 
 #endif

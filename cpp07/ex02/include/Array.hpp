@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:48 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/18 18:49:23 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/19 18:39:26 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ARRAY_HPP
 
 # include <iostream>
-# include <exception>
+# include <stdexcept>
 
 template <typename T> 
 class Array
@@ -35,7 +35,7 @@ public:
 	unsigned int	size() const;
 
 	Array	&operator=(const Array &src);
-	T		&operator[](const unsigned int idx) const throw(std::exception);
+	T		&operator[](const unsigned int idx) const throw(std::overflow_error);
 	static bool	verbose;
 
 };
