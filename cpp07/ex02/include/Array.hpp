@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:48 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/19 18:39:26 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/20 18:03:01 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,9 @@ public:
 
 	Array	&operator=(const Array &src);
 	T		&operator[](const unsigned int idx) const throw(std::overflow_error);
+	
 	static bool	verbose;
 
 };
 
 #endif
-
-/*
-- operator[] exception handling 하는 중이었음. - overflow_error exception inherit 할것. 
-- operator 오버로드 완성하고, main catch 영역 생각 
-- 처음에 생성 시 인자 받을 떄 out of limits 되는 지 에러처리
-*/
