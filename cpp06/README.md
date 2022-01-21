@@ -1,4 +1,4 @@
-[cpp06.en.subject.pdf](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f2e5d8b8-7960-4301-8598-a157634005e0/en.subject_(1).pdf)
+[cpp06.en.subject.pdf](https://cdn.intra.42.fr/pdf/pdf/35951/en.subject.pdf)
 
 # CPP06: C++ Casts [ref](https://www.cplusplus.com/articles/iG3hAqkS/)
 
