@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:36 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/21 20:53:36 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/22 16:14:16 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,26 @@ class   Span
 
 private:
 
-    Span();
-    std::vector<int> numbers;
+	Span();
+	std::vector<int>	numbers;
+	unsigned int    	size;
 
 public:
 
-    Span(unsigned int n);
-    Span(const Span &src);
-    ~Span();
+	Span(unsigned int n);
+	Span(const Span &src);
+	~Span();
 
-    Span &operator=(const Span &src);
+	Span &operator=(const Span &src);
 
-    void    addNumber(int num);
-    int     shortestSpan();
-    int     longestSpan();
+	void    addNumber(int num);
+	int     shortestSpan();
+	int     longestSpan();
 
-    static bool verbose;
+	std::vector<int>	getNumbers() const;
+	unsigned int		getSize();
+
+	static bool verbose;
 
 };
 

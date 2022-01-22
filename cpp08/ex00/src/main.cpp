@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:34 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/21 21:04:33 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/22 14:20:37 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(void)
 	catch (std::exception &e) {
 		std::cout << RED << e.what() << std::endl << RESET;
 	}
+	vct.clear();
+	std::vector<int>().swap(vct);
+	std::cout << "meomory check : " << vct.capacity() << std::endl; // 메모리 해제
 }
-
-//vector delete

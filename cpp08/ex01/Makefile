@@ -6,15 +6,16 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/18 18:17:59 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/22 15:44:49 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL = bash
 
-NAME = easyfind
+NAME = span
 
-SRC = src/main.cpp
+SRC = src/main.cpp\
+src/Span.cpp
 
 OBJ = $(SRC:.cpp=.o)
 OBJDIR = obj/

@@ -6,7 +6,7 @@
 #    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/18 18:17:59 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/22 13:46:09 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ = $(SRC:.cpp=.o)
 OBJDIR = obj/
 
 CXX = clang++
-CXXFLAGES = -Wall -Wextra -Werror -std=c++98
+CXXFLAGES = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 all : $(NAME)
 
