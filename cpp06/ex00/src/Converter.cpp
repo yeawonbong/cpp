@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:20:24 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/17 18:25:34 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/24 20:44:15 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,9 @@ Converter	&Converter::operator=(const Converter &src) {
 void	Converter::convert() throw(InvalidInputException) {
 	if (parseNanInf() == true)
 		return;
-	else if (('0' <= str[0] && str[0] <= '9') \
-					|| (str[0] == '-' && str[1])\
-					|| (str[0] == '+' && str[1]))
+	else if (isdigit(str[0]) || strchr("-+", str[0]))
 		parseNum();
-	else if (0 <= str[0] && str[0] <= 127 && !str[1]) {
+	else if (isascii(str[0]) && !str[1]) {
 		cVal = str[0];
 		dVal = static_cast<double>(cVal);
 	}
@@ -84,7 +82,8 @@ void	Converter::parseNum() throw(InvalidInputException) {
 				throw InvalidInputException();
 		}
 	}
-	std::stringstream(str) >> dVal;
+	std::stringstream stream(str);
+	stream >> dVal;
 	cVal = static_cast<char>(dVal);
 }
 
@@ -97,7 +96,7 @@ void	Converter::printVals() const {
 }
 
 std::string	Converter::getCVal() const {
-	if (type != INIT || dVal < 0 || 127 < dVal)
+	if (type != INIT || !isascii(dVal))
 		return ("impossible");
 	else if (dVal < 32 || dVal == 127)
 		return ("Non displayable");
@@ -123,9 +122,7 @@ std::string Converter::getFVal() const {
 	res << static_cast<float>(dVal);
 	std::string restr = res.str();
 	for (int i=0; restr[i]; i++) {
-		if (i != 0 && !isdigit(restr[i]))
-			return(restr + "f");
-		if (restr[i] == '.')
+		if (restr[i] == '.' || (i != 0 && !isdigit(restr[i]))) //예외types
 			return(restr + "f");
 	}
 	return restr + ".0f";

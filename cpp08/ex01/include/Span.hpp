@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:36 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/22 16:14:16 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/24 15:38:49 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,5 @@ public:
 	static bool verbose;
 
 };
-
-// template <typename T>
-// typename T::iterator    easyfind(T &container, int value)
-// {
-//     typename T::iterator    res = find(container.begin(), container.end(), value);
-//     if (res == container.end()) {
-//         throw std::out_of_range("The value is not found in the container");
-//     }
-//     return res;
-// }
 
 #endif

@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   EasyFind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:36 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/24 15:58:34 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/22 20:30:42 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef MUTANSTACK_HPP
+# define MUTANSTACK_HPP
 
 # include <iostream>
 # include <stdexcept>
+# include <stack>
+
 
 template <typename T>
-typename T::iterator    easyfind(T &container, int value) //const iterator 리턴형
+class   MutantStack : public std::stack<T>
 {
-    typename T::iterator    res = find(container.begin(), container.end(), value);
-    if (res == container.end()) {
-        throw std::out_of_range("The value is not found in the container");
-    }
-    return res;
-}
+
+public:
+
+	MutantStack();
+	MutantStack(const MutantStack &src);
+	~MutantStack();
+	MutantStack &operator=(const MutantStack &src);
+
+
+	typedef typename std::stack<T>::container_type::iterator iterator;
+	iterator	begin() {
+		return this->c.begin();
+	}
+	iterator	end() {
+		return this->c.end();
+	}
+
+	static bool verbose;
+
+};//const reverse + const reverse
 
 #endif

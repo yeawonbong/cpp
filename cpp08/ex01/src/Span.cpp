@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 16:26:58 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/22 16:26:58 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/24 15:58:30 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Span	&Span::operator=(const Span &src) {
 	return *this;
 }
 
-void	Span::addNumber(int num) {
+void	Span::addNumber(int num) { // iterator begin end 인자로 받는 함수 하나 더 만들기
 	if (find(numbers.begin(), numbers.end(), num) != numbers.end())
 		throw std::invalid_argument("The number already exists");
 	if (size < numbers.size() + 1)

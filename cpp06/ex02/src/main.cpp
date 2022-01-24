@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 19:55:11 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/17 20:35:49 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/24 20:52:07 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	identify(Base &p) {
 
 int main(void)
 {
-	Base::verbose = false;
+	Base::verbose = true;
 	
 	std::cout << GRAY << "Identify with Pointer" << std::endl << RESET;
 	Base *ptr=0;
