@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:20:24 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/24 20:44:15 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/28 17:04:43 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 bool Converter::verbose = true;
 
-Converter::Converter(void) : type(INIT) {
+Converter::Converter(void) : type(TINIT) {
 	if (Converter::verbose)
 		std::cout << "<Converter> Default Constructor called" << std::endl;
 }
 
-Converter::Converter(std::string str) : str(str), type(INIT) {
+Converter::Converter(std::string str) : str(str), type(TINIT) {
 	if (Converter::verbose)
 		std::cout << "<Converter> Standard Constructor called" << std::endl;
 }
@@ -54,13 +54,13 @@ void	Converter::convert() throw(InvalidInputException) {
 
 bool	Converter::parseNanInf() {
 	if (str == "inf" || str == "+inf" || str == "inff" || str == "+inff") {
-		type = INF;
+		type = TINF;
 	}
 	else if (str == "-inf" || str == "-inff") {
-		type = MINF;
+		type = TMINF;
 	}
 	else if (str == "nan" || str == "nanf") {
-		type = NAN;
+		type = TNAN;
 	}
 	else
 		return false;
@@ -96,7 +96,7 @@ void	Converter::printVals() const {
 }
 
 std::string	Converter::getCVal() const {
-	if (type != INIT || !isascii(dVal))
+	if (type != TINIT || !isascii(dVal))
 		return ("impossible");
 	else if (dVal < 32 || dVal == 127)
 		return ("Non displayable");
@@ -104,7 +104,7 @@ std::string	Converter::getCVal() const {
 }
 
 std::string Converter::getIVal() const {
-	if (type != INIT || dVal < INT_MIN || INT_MAX < dVal)
+	if (type != TINIT || dVal < INT_MIN || INT_MAX < dVal)
 		return ("impossible");
 	std::stringstream res;
 	res << static_cast<int>(dVal);
@@ -113,9 +113,9 @@ std::string Converter::getIVal() const {
 
 std::string Converter::getFVal() const {
 	switch (type) {
-		case INF:	return ("inff");
-		case MINF:	return ("-inff");
-		case NAN:	return ("nanf");
+		case TINF:	return ("inff");
+		case TMINF:	return ("-inff");
+		case TNAN:	return ("nanf");
 		default:	break;
 	}
 	std::stringstream res;
@@ -130,9 +130,9 @@ std::string Converter::getFVal() const {
 
 std::string Converter::getDVal() const{
 	switch (type) {
-		case INF:	return ("inf");
-		case MINF:	return ("-inf");
-		case NAN:	return ("nan");
+		case TINF:	return ("inf");
+		case TMINF:	return ("-inf");
+		case TNAN:	return ("nan");
 		default:	break;
 	}
 	std::stringstream res;

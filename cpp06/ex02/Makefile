@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+         #
+#    By: ybong <ybong@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 16:21:43 by ybong             #+#    #+#              #
-#    Updated: 2022/01/17 20:09:27 by ybong            ###   ########.fr        #
+#    Updated: 2022/01/28 16:54:18 by ybong            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,12 @@ src/B.cpp\
 src/C.cpp\
 src/main.cpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJ = obj/Base.o\
+obj/A.o\
+obj/B.o\
+obj/C.o\
+obj/main.o
+
 OBJDIR = obj/
 
 CXX = clang++
@@ -28,20 +33,20 @@ CXXFLAGES = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(OBJDIR)
+$(NAME) : $(OBJ)
 	@echo -n "Assembling [$@]... "
 	@$(CXX) $(CXXFLAGES) -o $@ $(OBJ)
-	@mv src/*.o $(OBJDIR)
+
+	@echo "✔"
+
+$(OBJ) : $(SRC) $(OBJDIR)
+	@echo -n "Compiling... "
+	@$(CXX) $(CXXFLAGES) -c $(SRC)
+	@mv *.o $(OBJDIR)
 	@echo "✔"
 
 $(OBJDIR) :
 	@mkdir $@
-
-$(OBJ) : $(SRC)
-	@echo -n "Compiling... "
-	@$(CXX) $(CXXFLAGES) -c $(SRC)
-	@mv *.o src
-	@echo "✔"
 
 fclean : clean
 	@echo -n "Cleaning all... "
@@ -53,8 +58,5 @@ clean :
 	@rm -rf $(OBJDIR)
 	@rm -f $(OBJ)
 	@rm -f *.o
-	@rm -f *_shrubbery
 	@echo "✔"
-
-re : fclean all
 

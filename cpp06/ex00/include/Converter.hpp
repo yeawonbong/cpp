@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ybong <ybong@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:20:19 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/24 18:52:34 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/28 17:04:13 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define RED "\033[1;31m"
 
 enum types {
-	INIT, INF, MINF, NAN
+	TINIT, TINF, TMINF, TNAN
 };
 
 class Converter
