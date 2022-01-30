@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:45 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/18 16:17:38 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/29 18:46:38 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ int main(void)
 	{
 		int arr[5] = {1, 2, 3, 4, 5};
 		std::cout << BLUE << "Test int Array" << std::endl << RESET;
-		::iter(arr, 5, print);
+		iter(arr, 5, print);
 		std::cout << GRAY << "Function [iter-plusOne] called" << std::endl << RESET;
-		::iter(arr, 5, plusOne);
-		::iter(arr, 5, print);
+		iter(arr, 5, plusOne);
+		iter(arr, 5, print);
 	}
 	{
 		std::cout << BLUE <<  "Test char Array" << std::endl << RESET;
 		char arr[5] = {'a','b','c','d','e'};
-		::iter(arr, 5, print);
+		iter(arr, 5, print);
 		std::cout << GRAY << "Function [iter-plusOne] called" << std::endl << RESET;
-		::iter(arr, 5, plusOne);
-		::iter(arr, 5, print);
+		iter(arr, 5, plusOne);
+		iter(arr, 5, print);
 	}	
 	{
 		std::cout << BLUE <<  "Test string Array" << std::endl << RESET;
@@ -56,7 +56,7 @@ int main(void)
 			"four",
 			"five"
 			};
-		::iter(arr, 5, print);
+		iter(arr, 5, print);
 	}
 	return 0;
 }

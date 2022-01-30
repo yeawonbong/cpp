@@ -40,6 +40,6 @@ public:
 
 	static bool verbose;
 
-};//const reverse + const reverse
+};
 
 #endif

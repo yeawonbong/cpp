@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:36 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/24 15:58:34 by ybong            ###   ########.fr       */
+/*   Updated: 2022/01/29 18:53:34 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdexcept>
 
 template <typename T>
-typename T::iterator    easyfind(T &container, int value) //const iterator 리턴형
+typename T::iterator    easyfind(T &container, int value)
 {
     typename T::iterator    res = find(container.begin(), container.end(), value);
     if (res == container.end()) {
