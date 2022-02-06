@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:45 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/20 18:03:00 by ybong            ###   ########.fr       */
+/*   Updated: 2022/02/06 12:01:38 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main()
 	{
 		Array<int> numbers(MAX_VAL);
 		int* mirror = new int[MAX_VAL];
-		srand(time(NULL));
 		for (int i = 0; i < MAX_VAL; i++)
 		{
 			const int value = rand();
@@ -60,16 +59,17 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-		std::cout << BLUE << "TEST4" << std::endl << RESET;
+		std::cout << BLUE << "TEST4" << std::endl << RESET; /* size() 함수 테스트 */
 		for (int i = 0; i < MAX_VAL; i++)
 		{
 			numbers[i] = rand();
-			// std::cout << numbers[i] << " ";
+			// std::cout << numbers[i] << " "; // array 출력
 		}
 		// std::cout << std::endl;
 		std::cout << "size() :  " << numbers.size() << std::endl;
 		delete [] mirror;
 	}
+
 	/* STRING ARR TEST*/
     std::cout << BLUE << "<<<STRING Array Test>>>" << std::endl << RESET;
 	{
@@ -81,7 +81,7 @@ int main()
 		{
 			strings[i] = stringSrc[i];
 		}
-		std::cout << BLUE << "TEST1" << std::endl << RESET;
+		std::cout << BLUE << "TEST1" << std::endl << RESET; /* 제대로 복사 되었는 지 */
 		{
 			Array<std::string> tmp = strings;
 			Array<std::string> test(tmp);
@@ -94,7 +94,7 @@ int main()
 				return 1;
 			}
 		}
-		std::cout << BLUE << "TEST2" << std::endl << RESET;
+		std::cout << BLUE << "TEST2" << std::endl << RESET; /* 범위 밖 인덱스 접근 예외처리 */
 		try
 		{
 			strings[-2] = "";
@@ -103,7 +103,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-		std::cout << BLUE << "TEST3" << std::endl << RESET;
+		std::cout << BLUE << "TEST3" << std::endl << RESET; /* 범위 밖 인덱스 접근 예외처리 */
 		try
 		{
 			strings[STRING_MAX_VAL] = "";
@@ -112,7 +112,7 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
-		std::cout << BLUE << "TEST4" << std::endl << RESET;
+		std::cout << BLUE << "TEST4" << std::endl << RESET; /* size() 함수 테스트 */
 		for (int i = 0; i < STRING_MAX_VAL; i++)
 		{
 			std::cout << strings[i] << " ";

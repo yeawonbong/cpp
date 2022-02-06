@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:48 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/20 18:03:01 by ybong            ###   ########.fr       */
+/*   Updated: 2022/02/06 12:29:26 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	Array(const Array &src);
 	~Array();
 
-	T	*getArray() const;
+	T				*getArray() const;
 	unsigned int	size() const;
 
 	Array	&operator=(const Array &src);
