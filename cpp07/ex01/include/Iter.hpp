@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:48 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/29 18:46:46 by ybong            ###   ########.fr       */
+/*   Updated: 2022/02/06 16:58:34 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,10 @@ void	iter(T* arr, unsigned int len, void(*func)(T&)) {
 		func(arr[i]);
 	}
 }
-
+template <typename T>
+void	iter(T* arr, unsigned int len, void(*func)(T const &)) {
+	for (unsigned int i=0; i < len; i++) {
+		func(arr[i]);
+	}
+}
 #endif
