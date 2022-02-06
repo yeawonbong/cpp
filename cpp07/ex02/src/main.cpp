@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:07:45 by ybong             #+#    #+#             */
-/*   Updated: 2022/02/06 12:01:38 by ybong            ###   ########.fr       */
+/*   Updated: 2022/02/06 17:00:48 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main()
 	{
 		Array<int> numbers(MAX_VAL);
 		int* mirror = new int[MAX_VAL];
+		srand(time(NULL));
 		for (int i = 0; i < MAX_VAL; i++)
 		{
 			const int value = rand();
@@ -63,7 +64,7 @@ int main()
 		for (int i = 0; i < MAX_VAL; i++)
 		{
 			numbers[i] = rand();
-			// std::cout << numbers[i] << " "; // array 출력
+			// std::cout << numbers[i] << " ";
 		}
 		// std::cout << std::endl;
 		std::cout << "size() :  " << numbers.size() << std::endl;
