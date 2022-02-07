@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 16:26:58 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/24 15:58:30 by ybong            ###   ########.fr       */
+/*   Updated: 2022/02/07 15:07:09 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Span::Span(unsigned int n) : size(n) {
 		std::cout << "Constructor called" << std::endl;	
 }
 
-Span::Span(const Span &src) {
+Span::Span(const Span &src) : size(src.size){
 	if (verbose)
 		std::cout << "Copy Constructor called" << std::endl;
 	*this = src;
@@ -40,7 +40,13 @@ Span::~Span() {
 Span	&Span::operator=(const Span &src) {
 	if (verbose)
 		std::cout << "Assignment Operator called" << std::endl;
-	this->numbers = src.numbers;
+	
+	size = src.size;
+	numbers.clear();
+	std::vector<int>().swap(numbers);
+	for (unsigned long i=0; i < src.size && src.numbers[i]; i++) {
+		numbers.push_back(src.numbers[i]);
+	}
 	return *this;
 }
 

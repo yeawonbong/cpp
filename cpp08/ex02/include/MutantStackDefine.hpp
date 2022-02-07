@@ -38,7 +38,10 @@ template <typename T>
 MutantStack<T>	&MutantStack<T>::operator=(const MutantStack &src) {
 	if (verbose)
 		std::cout << "Assignment Operator called" << std::endl;
-	this->numbers = src.numbers;
+	this->c.clear();
+	for (unsigned long i=0; i < src.size(); i++) {
+		this->push(src.c[i]);
+	}
 	return *this;
 }
 

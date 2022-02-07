@@ -6,7 +6,7 @@
 /*   By: ybong <ybong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:28:34 by ybong             #+#    #+#             */
-/*   Updated: 2022/01/22 16:24:28 by ybong            ###   ########.fr       */
+/*   Updated: 2022/02/07 15:20:06 by ybong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,26 @@ int main(void)
 	}
 	catch (std::exception &e) {
 		std::cout << RED << e.what() << std::endl << RESET;
+	}
+	{
+		std::cout << GRAY << "<Copy constructor Test>" << std::endl << RESET;
+		Span sp = Span(8);
+		sp.addNumber(1);
+		sp.addNumber(2);
+		sp.addNumber(3);
+		sp.addNumber(4);
+		sp.addNumber(5);
+
+		Span cpSp = Span(sp);
+		sp.addNumber(9);
+		for (unsigned long i=0; i < sp.getNumbers().size(); i++) {
+			std::cout << BLUE << sp.getNumbers()[i] << " " << RESET;
+		}
+		std::cout << std::endl;
+		for (unsigned long i=0; i < cpSp.getNumbers().size(); i++) {
+			std::cout << BLUE << cpSp.getNumbers()[i] << " " << RESET;
+		}
+		std::cout << std::endl;
 	}
 	return 0;
 }
